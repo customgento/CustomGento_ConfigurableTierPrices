@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Spranks_ConfigurableTierPrices>
+			<version>0.1.0</version>
+		</Spranks_ConfigurableTierPrices>
+	</modules>
+	<global>
+		<models>
+			<catalog>
+				<rewrite>
+					<product_type_configurable_price>Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price</product_type_configurable_price>
+				</rewrite>
+			</catalog>
+		</models>
+	</global>
+</config>
