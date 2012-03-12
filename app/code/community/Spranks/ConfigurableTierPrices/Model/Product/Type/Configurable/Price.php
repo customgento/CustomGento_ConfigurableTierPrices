@@ -49,7 +49,7 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
         // two black shirts and you will get the tier price of eight euro.
         // based on https://www.magentocommerce.com/boards/viewthread/10743/
         if ($product->getTierPriceCount() > 0) {
-            $tierPrice = $this->calcConfigProductTierPricing($product);
+            $tierPrice = $this->_calcConfigProductTierPricing($product);
             if ($tierPrice < $finalPrice) {
                 $finalPrice = $tierPrice;
             }
@@ -64,7 +64,7 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
      * @param   Mage_Catalog_Model_Product $product
      * @return  float
      */
-    public function calcConfigProductTierPricing($product)
+    protected function _calcConfigProductTierPricing($product)
     {
         $tierPrice = PHP_INT_MAX;
 
