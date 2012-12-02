@@ -1,0 +1,15 @@
+{
+    "name":"Spranks/ConfigurableTierPrices",
+    "type":"magento-module",
+    "license":"OSL-3.0",
+    "homepage":"https://github.com/sprankhub/Spranks_ConfigurableTierPrices",
+    "description":"This extension changes the way Magento calculates tier prices of configurable products. You can now add different variants of a configurable product to the cart and you will get the tier price for the total quantity of all variants in the cart.",
+    "authors":[
+        {
+            "name":"Simon Sprankel"
+        }
+    ],
+    "require":{
+        "magento-hackathon/magento-composer-installer":"dev-master"
+    }
+}
