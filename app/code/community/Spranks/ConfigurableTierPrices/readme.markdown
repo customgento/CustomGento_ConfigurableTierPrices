@@ -50,9 +50,9 @@ Any contribution is highly appreciated. The best way to contribute code is to op
 
 Developer
 ---------
-FirstName LastName  
-[http://www.firstname-lastname.com](http://www.firstname-lastname.com)  
-[@FirstNameLastName](https://twitter.com/FirstNameLastName)
+Simon Sprankel  
+[http://www.simonsprankel.com](http://www.simonsprankel.com)  
+[@SimonSprankel](https://twitter.com/SimonSprankel)
 
 Licence
 -------
