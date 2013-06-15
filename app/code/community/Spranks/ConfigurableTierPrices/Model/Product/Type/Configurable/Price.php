@@ -1,38 +1,8 @@
 <?php
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Open Software License (OSL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/osl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    Mage
- * @package     Mage_Catalog
- * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- */
 
-/**
- * Product type price model
- *
- * @category    Mage
- * @package     Mage_Catalog
- * @author      Magento Core Team <core@magentocommerce.com>
- */
 class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price extends Mage_Catalog_Model_Product_Type_Configurable_Price
 {
+
     /**
      * Get product final price
      *
@@ -40,7 +10,7 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
      * @param   Mage_Catalog_Model_Product $product
      * @return  double
      */
-    public function getFinalPrice($qty=null, $product)
+    public function getFinalPrice($qty = null, $product)
     {
         $finalPrice = parent::getFinalPrice($qty, $product);
         // if tier prices are defined, also adapt them to configurable products
@@ -58,7 +28,7 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
     }
 
     /**
-     * Get product final price via configurable product's tier pricing structure. 
+     * Get product final price via configurable product's tier pricing structure.
      * Uses qty of parent item to determine price.
      *
      * @param   Mage_Catalog_Model_Product $product
@@ -68,7 +38,7 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
     {
         $tierPrice = PHP_INT_MAX;
 
-        if ($items = Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection()) {
+        if ($items = $this->_getAllVisibleItems()) {
             // map mapping the IDs of the parent products with the quantities of the corresponding simple products
             $idQuantities = array();
             // go through all products in the quote
@@ -92,6 +62,15 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
             }
         }
         return $tierPrice;
+    }
+
+    protected function _getAllVisibleItems()
+    {
+        if (Mage::helper('spranks_configurabletierprices/admin')->isAdmin()) {
+            return Mage::getSingleton('adminhtml/session_quote')->getQuote()->getAllVisibleItems();
+        } else {
+            return Mage::getSingleton('checkout/session')->getQuote()->getAllVisibleItems();
+        }
     }
 
 }
