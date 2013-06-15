@@ -10,7 +10,7 @@ Facts
 - Magento Connect 1.0 extension key: magento-community/Spranks_ConfigurableTierPrices
 - Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/Spranks_ConfigurableTierPrices
 - [extension on GitHub](https://github.com/sprankhub/Spranks_ConfigurableTierPrices)
-- [direct download link](http://connect.magentocommerce.com/community/get/Spranks_ConfigurableTierPrices-0.4.0.tgz)
+- [direct download link](https://github.com/sprankhub/Spranks_ConfigurableTierPrices/archive/master.zip)
 
 Description
 -----------
