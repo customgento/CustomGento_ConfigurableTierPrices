@@ -13,6 +13,11 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
     public function getFinalPrice($qty = null, $product)
     {
         $finalPrice = parent::getFinalPrice($qty, $product);
+        // do not calculate tier prices based on cart items on product page
+        // see https://github.com/sprankhub/Spranks_ConfigurableTierPrices/issues/14
+        if (Mage::registry('current_product')) {
+            return $finalPrice;
+        }
         // if tier prices are defined, also adapt them to configurable products
         // example: if a shirt is available in red and black and if you buy 
         // three or more the price is eight euro, you can also buy one red and 
