@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Spranks_ConfigurableTierPrices</name>
-    <version>0.4.0</version>
+    <version>1.0.0</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL 3.0</license>
     <channel>community</channel>
     <extends/>
     <summary>This module changes the way Magento calculates tier prices of configurable products.</summary>
     <description>This Magento module changes the way Magento calculates tier prices of configurable products. You can now add different variants of a configurable product to the cart and you will get the tier price for the total quantity of all variants in the cart.</description>
-    <notes>Also works with the manual order creation in the admin panel now</notes>
+    <notes>Fixed wrong price display on detail page</notes>
     <authors><author><name>Simon Sprankel</name><user>spranks</user><email>simonsprankel@gmail.com</email></author></authors>
-    <date>2013-06-15</date>
-    <time>12:51:01</time>
-    <contents><target name="magecommunity"><dir name="Spranks"><dir name="ConfigurableTierPrices"><dir name="Helper"><file name="Admin.php" hash="7ec6839ca9c1fa032d493eaba60e391a"/></dir><dir name="Model"><dir name="Product"><dir name="Type"><dir name="Configurable"><file name="Price.php" hash="fe9bdd8c4cb2ce442b3c8e6ad4d8c4ec"/></dir></dir></dir></dir><dir name="etc"><file name="config.xml" hash="86aa5511a60f71b23f941865580ad310"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Spranks_ConfigurableTierPrices.xml" hash="8a3f62990ce094cb7e7e6313b66d5d51"/></dir></target></contents>
+    <date>2014-03-12</date>
+    <time>13:21:42</time>
+    <contents><target name="magecommunity"><dir name="Spranks"><dir name="ConfigurableTierPrices"><dir name="Helper"><file name="Admin.php" hash="7ec6839ca9c1fa032d493eaba60e391a"/></dir><dir name="Model"><dir name="Product"><dir name="Type"><dir name="Configurable"><file name="Price.php" hash="c4abb3058d158f0ca8bf1483e3fb4bbc"/></dir></dir></dir></dir><dir name="etc"><file name="config.xml" hash="570f31c351a32e5fccb69ccf7cf4c2ee"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Spranks_ConfigurableTierPrices.xml" hash="8a3f62990ce094cb7e7e6313b66d5d51"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

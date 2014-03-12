@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Spranks_ConfigurableTierPrices>
-            <version>0.4.0</version>
+            <version>1.0.0</version>
         </Spranks_ConfigurableTierPrices>
     </modules>
     <global>
