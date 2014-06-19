@@ -48,17 +48,14 @@ class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price exten
             $idQuantities = array();
             // go through all products in the quote
             foreach ($items as $item) {
-                if ($item->getParentItem())
+                /** @var Mage_Sales_Model_Quote_Item $item */
+                if ($item->getParentItem()) {
                     continue;
-                // get the simple products ID
-                $productModel = Mage::getModel('catalog/product');
-                $id = $productModel->getIdBySku($item->getSku());
-                // get the parent IDs
-                $configurableProductModel = Mage::getModel('catalog/product_type_configurable');
-                $parentIdArray = $configurableProductModel->getParentIdsByChild($id);
-                // map the parent ID with the quantities of the simple products
-                foreach ($parentIdArray as $parent)
-                    $idQuantities[$parent][] = $item->getQty();
+                }
+                // this is the product ID of the parent!
+                $id = $item->getProductId();
+                // map the parent ID with the quantity of the simple product
+                $idQuantities[$id][] = $item->getQty();
             }
             // compute the total quantity of items of the configurable product
             if (array_key_exists($product->getId(), $idQuantities)) {
