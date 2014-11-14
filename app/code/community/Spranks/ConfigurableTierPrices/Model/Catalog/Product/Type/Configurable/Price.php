@@ -1,6 +1,6 @@
 <?php
 
-class Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price extends Mage_Catalog_Model_Product_Type_Configurable_Price
+class Spranks_ConfigurableTierPrices_Model_Catalog_Product_Type_Configurable_Price extends Mage_Catalog_Model_Product_Type_Configurable_Price
 {
 
     /**

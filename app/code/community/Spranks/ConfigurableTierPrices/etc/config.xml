@@ -9,7 +9,7 @@
         <models>
             <catalog>
                 <rewrite>
-                    <product_type_configurable_price>Spranks_ConfigurableTierPrices_Model_Product_Type_Configurable_Price</product_type_configurable_price>
+                    <product_type_configurable_price>Spranks_ConfigurableTierPrices_Model_Catalog_Product_Type_Configurable_Price</product_type_configurable_price>
                 </rewrite>
             </catalog>
         </models>
