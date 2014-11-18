@@ -11,6 +11,7 @@ class Spranks_ConfigurableTierPrices_Helper_Admin extends Mage_Core_Helper_Abstr
         if (Mage::getDesign()->getArea() == 'adminhtml') {
             return true;
         }
+
         return false;
     }
 
