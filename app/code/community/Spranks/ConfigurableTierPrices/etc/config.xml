@@ -30,7 +30,7 @@
     <phpunit>
         <suite>
             <modules>
-                <Spranks_ConfigurableTierPrices>1</Spranks_ConfigurableTierPrices>
+                <Spranks_ConfigurableTierPrices/>
             </modules>
         </suite>
     </phpunit>
