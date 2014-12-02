@@ -1,0 +1,99 @@
+tables:
+  eav_attribute_option:
+    - option_id: 3
+      attribute_id: 92
+      sort_order: 0
+    - option_id: 4
+      attribute_id: 92
+      sort_order: 0
+  eav_attribute_option_value:
+    - value_id: 3
+      option_id: 3
+      store_id: 0
+      value: red
+    - value_id: 4
+      option_id: 4
+      store_id: 0
+      value: blue
+
+eav:
+  catalog_product:
+
+    # Product 1 is a configurable product with tier prices
+    - entity_id: 1
+      type_id: simple
+      name: Product One
+      description: A configurable test product
+      short_description: A configurable test product
+      sku: product1-red
+      weight: 1
+      status: 1 # Enabled
+      visibility: 1 # Not Visible Individually
+      price: 20.00
+      tier_price:
+        - customer_group_id: 0
+          qty: 2
+          value: 18.00
+      tax_class_id: 2 # Taxable Goods
+      stock:
+        qty: 9999
+        is_in_stock: 1
+      category_ids:
+        - 2 # Default Category
+      website_ids:
+        - base
+      color: red
+    - entity_id: 2
+      type_id: simple
+      name: Product One
+      description: A configurable test product
+      short_description: A configurable test product
+      sku: product1-blue
+      weight: 1
+      status: 1 # Enabled
+      visibility: 1 # Not Visible Individually
+      price: 20.00
+      tier_price:
+        - customer_group_id: 0
+          qty: 2
+          value: 18.00
+      tax_class_id: 2 # Taxable Goods
+      stock:
+        qty: 9999
+        is_in_stock: 1
+      category_ids:
+        - 2 # Default Category
+      website_ids:
+        - base
+      color: blue
+    - entity_id: 3
+      type_id: configurable
+      name: Product One
+      description: A configurable test product
+      short_description: A configurable test product
+      sku: product1
+      status: 1 # Enabled
+      visibility: 4 # Visible in Catalog & Search
+      price: 20.00
+      tier_price:
+        - customer_group_id: 0
+          qty: 2
+          value: 18.00
+      tax_class_id: 2 # Taxable Goods
+      stock:
+        is_in_stock: 1
+      category_ids:
+        - 2 # Default Category
+      website_ids:
+        - base
+      super_attributes:
+        - color
+      configurable_children:
+        - 1
+        - 2
+
+    # TODO Product 2 is a configurable product with tier prices and prices for each product variation
+
+    # TODO Product 3 is a configurable product with tier prices and prices for individual options
+
+    # TODO Product 4 is a configurable product with tier prices, prices for individual options and prices for each product variation
