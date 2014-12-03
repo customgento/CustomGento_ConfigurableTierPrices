@@ -54,6 +54,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @singleton checkout/cart
      */
     public function testProduct1CartPricing()
     {
@@ -75,6 +76,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @singleton checkout/cart
      */
     public function testProduct1CartTierPricing()
     {
