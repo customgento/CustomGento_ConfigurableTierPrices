@@ -22,6 +22,7 @@ eav:
     # Product 1 is a configurable product with tier prices
     - entity_id: 1
       type_id: simple
+      attribute_set_id: 4
       name: Product One
       description: A configurable test product
       short_description: A configurable test product
@@ -45,6 +46,7 @@ eav:
       color: red
     - entity_id: 2
       type_id: simple
+      attribute_set_id: 4
       name: Product One
       description: A configurable test product
       short_description: A configurable test product
@@ -68,6 +70,7 @@ eav:
       color: blue
     - entity_id: 3
       type_id: configurable
+      attribute_set_id: 4
       name: Product One
       description: A configurable test product
       short_description: A configurable test product
