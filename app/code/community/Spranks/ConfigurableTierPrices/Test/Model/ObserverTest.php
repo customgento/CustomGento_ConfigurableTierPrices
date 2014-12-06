@@ -4,7 +4,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
 {
 
     /**
-     * Mock customer session singleton and set default store.
+     * Mock session singletons, set default store and fix session problems.
      */
     protected function setUp()
     {
@@ -29,7 +29,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     }
 
     /**
-     * Revert to admin store.
+     * Revert to admin store and fix session problems.
      */
     protected function tearDown()
     {
