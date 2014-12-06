@@ -6,7 +6,7 @@ This extension changes the way Magento calculates tier prices of configurable pr
 
 Facts
 -----
-- version: 1.0.1
+- version: 2.0.0
 - extension key: Spranks_ConfigurableTierPrices
 - [extension on Magento Connect](http://www.magentocommerce.com/magento-connect/spranks-configurabletierprices-1424.html)
 - Magento Connect 1.0 extension key: magento-community/Spranks_ConfigurableTierPrices
@@ -28,7 +28,8 @@ Requirements
 
 Compatibility
 -------------
-- Magento >= 1.4
+- Magento >= 1.7
+- Magento < 1.7: If you still use Magento < 1.7, which is not recommended at all, use version 1.0.1.
 
 Installation Instructions
 -------------------------
