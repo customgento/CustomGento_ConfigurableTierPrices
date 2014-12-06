@@ -24,6 +24,8 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
         $this->replaceByMock('singleton', 'checkout/session', $mockCheckoutSession);
 
         $this->app()->setCurrentStore('default');
+        // somehow needed to avoid exceptions of type "Cannot send session cookie - headers already sent by"
+        @session_start();
     }
 
     /**
