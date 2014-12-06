@@ -39,6 +39,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @doNotIndexAll
      */
     public function testProduct1Pricing()
     {
@@ -50,6 +51,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @doNotIndexAll
      */
     public function testProduct1TierPricing()
     {
@@ -61,6 +63,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @doNotIndexAll
      * @singleton checkout/cart
      */
     public function testProduct1CartPricing()
@@ -83,6 +86,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @doNotIndexAll
      * @singleton checkout/cart
      */
     public function testProduct1CartTierPricing()
@@ -109,6 +113,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @doNotIndexAll
      */
     public function testProduct1AdminPricing()
     {
@@ -118,6 +123,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     /**
      * @test
      * @loadFixture createProducts
+     * @doNotIndexAll
      */
     public function testProduct1AdminTierPricing()
     {
