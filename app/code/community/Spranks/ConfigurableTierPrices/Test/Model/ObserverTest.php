@@ -9,14 +9,14 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
     protected function setUp()
     {
         parent::setUp();
-        // Mock core session
+        // mock core session
         $mockCoreSession = $this->getModelMockBuilder('core/session')
             ->disableOriginalConstructor()
             ->setMethods(null)
             ->getMock();
         $this->replaceByMock('singleton', 'core/session', $mockCoreSession);
 
-        // Mock checkout session
+        // mock checkout session
         $mockCheckoutSession = $this->getModelMockBuilder('checkout/session')
             ->disableOriginalConstructor()
             ->setMethods(null)
@@ -31,6 +31,7 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
      */
     protected function tearDown()
     {
+        // somehow needed to avoid exceptions of type "Failed to write session data"
         @session_destroy();
         $this->setCurrentStore('admin');
     }
@@ -44,8 +45,14 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
         $product = Mage::getModel('catalog/product')->load(1);
         $this->assertEquals(20.0, $product->getFinalPrice(1), 'test normal price');
         $this->assertEventDispatched('catalog_product_get_final_price');
+    }
 
-        // load product again so that price is calculated again
+    /**
+     * @test
+     * @loadFixture createProducts
+     */
+    public function testProduct1TierPricing()
+    {
         $product = Mage::getModel('catalog/product')->load(1);
         $this->assertEquals(18.0, $product->getFinalPrice(2), 'test tier price');
         $this->assertEventDispatched('catalog_product_get_final_price');
@@ -96,9 +103,25 @@ class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHP
         ));
         $cart->save();
         $cart->getQuote()->collectTotals();
-        // TODO for some reason, the cart contents from the test testProduct1CartPricing are still available and not
-        // TODO the new ones added above :-( If the test testProduct1CartPricing is removed, this test works flawlessly
         $this->assertEquals(36, $cart->getQuote()->getGrandTotal(), 'test tier price in cart');
+    }
+
+    /**
+     * @test
+     * @loadFixture createProducts
+     */
+    public function testProduct1AdminPricing()
+    {
+        // TODO implement test
+    }
+
+    /**
+     * @test
+     * @loadFixture createProducts
+     */
+    public function testProduct1AdminTierPricing()
+    {
+        // TODO implement test
     }
 
 }
