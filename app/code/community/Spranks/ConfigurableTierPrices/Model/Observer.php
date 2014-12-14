@@ -72,7 +72,7 @@ class Spranks_ConfigurableTierPrices_Model_Observer
      */
     private function _getAllVisibleItems()
     {
-        if (Mage::helper('spranks_configurabletierprices/admin')->isAdmin()) {
+        if (Mage::helper('spranks_configurabletierprices')->isAdmin()) {
             return Mage::getSingleton('adminhtml/session_quote')->getQuote()->getAllVisibleItems();
         } else {
             return Mage::getSingleton('checkout/session')->getQuote()->getAllVisibleItems();
