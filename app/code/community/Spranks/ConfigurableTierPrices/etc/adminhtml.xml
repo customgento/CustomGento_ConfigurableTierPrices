@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <spranks_configurabletierprices translate="title">
+                        <title>Configurable Tier Prices</title>
+                        <sort_order>510</sort_order>
+                    </spranks_configurabletierprices>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <spranks_configurabletierprices translate="title">
+                                        <title>Configurable Tier Prices Settings</title>
+                                    </spranks_configurabletierprices>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

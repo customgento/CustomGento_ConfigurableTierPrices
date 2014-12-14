@@ -27,6 +27,24 @@
             </catalog_product_get_final_price>
         </events>
     </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Spranks_ConfigurableTierPrices>
+                    <files>
+                        <default>Spranks_ConfigurableTierPrices.csv</default>
+                    </files>
+                </Spranks_ConfigurableTierPrices>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <spranks_configurabletierprices>
+            <general>
+                <is_enabled>1</is_enabled>
+            </general>
+        </spranks_configurabletierprices>
+    </default>
     <phpunit>
         <suite>
             <modules>

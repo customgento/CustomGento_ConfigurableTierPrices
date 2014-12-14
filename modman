@@ -1,2 +1,4 @@
-app/etc/modules/Spranks_ConfigurableTierPrices.xml      app/etc/modules/Spranks_ConfigurableTierPrices.xml
-app/code/community/Spranks/ConfigurableTierPrices/      app/code/community/Spranks/ConfigurableTierPrices/
+app/code/community/Spranks/ConfigurableTierPrices/ app/code/community/Spranks/ConfigurableTierPrices/
+app/etc/modules/Spranks_ConfigurableTierPrices.xml app/etc/modules/Spranks_ConfigurableTierPrices.xml
+app/locale/de_DE/Spranks_ConfigurableTierPrices.csv app/locale/de_DE/Spranks_ConfigurableTierPrices.csv
+app/locale/en_US/Spranks_ConfigurableTierPrices.csv app/locale/en_US/Spranks_ConfigurableTierPrices.csv

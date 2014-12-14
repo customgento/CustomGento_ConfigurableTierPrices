@@ -12,6 +12,9 @@ class Spranks_ConfigurableTierPrices_Model_Observer
      */
     public function catalogProductGetFinalPrice(Varien_Event_Observer $observer)
     {
+        if (!Mage::helper('spranks_configurabletierprices')->isExtensionEnabled()) {
+            return $this;
+        }
         $product = $observer->getProduct();
         // do not calculate tier prices based on cart items on product page
         // see https://github.com/sprankhub/Spranks_ConfigurableTierPrices/issues/14
