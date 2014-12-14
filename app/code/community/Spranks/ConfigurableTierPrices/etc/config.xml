@@ -42,6 +42,7 @@
         <spranks_configurabletierprices>
             <general>
                 <is_enabled>1</is_enabled>
+                <disabled_for_category/>
             </general>
         </spranks_configurabletierprices>
     </default>
