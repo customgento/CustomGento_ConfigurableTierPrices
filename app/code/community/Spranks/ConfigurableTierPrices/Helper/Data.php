@@ -1,6 +1,6 @@
 <?php
 
-class Spranks_ConfigurableTierPrices_Helper_Admin extends Mage_Core_Helper_Abstract
+class Spranks_ConfigurableTierPrices_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
     public function isAdmin()
