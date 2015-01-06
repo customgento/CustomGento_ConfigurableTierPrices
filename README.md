@@ -4,11 +4,17 @@ Spranks_ConfigurableTierPrices Extension
 
 This extension changes the way Magento calculates tier prices of configurable products. You can now add different variants of a configurable product to the cart and you will get the tier price for the total quantity of all variants in the cart.
 
+This extension is free of charge. However, since the development and support takes some time, I kindly ask you to donate:
+
+[![PayPal Donate Button](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PLZAWC5QXVYN6)
+
+I would also be very thankful if you could leave a review on [Magento Connect](http://www.magentocommerce.com/magento-connect/spranks-configurabletierprices.html).
+
 Facts
 -----
 - version: 2.1.0
 - extension key: Spranks_ConfigurableTierPrices
-- [extension on Magento Connect](http://www.magentocommerce.com/magento-connect/spranks-configurabletierprices-1424.html)
+- [extension on Magento Connect](http://www.magentocommerce.com/magento-connect/spranks-configurabletierprices.html)
 - Magento Connect 1.0 extension key: magento-community/Spranks_ConfigurableTierPrices
 - Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/Spranks_ConfigurableTierPrices
 - [extension on GitHub](https://github.com/sprankhub/Spranks_ConfigurableTierPrices)
