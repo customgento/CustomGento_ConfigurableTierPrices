@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Spranks_ConfigurableTierPrices</name>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">OSL 3.0</license>
     <channel>community</channel>
     <extends/>
     <summary>This module changes the way Magento calculates tier prices of configurable products.</summary>
     <description>This Magento module changes the way Magento calculates tier prices of configurable products. You can now add different variants of a configurable product to the cart and you will get the tier price for the total quantity of all variants in the cart.</description>
-    <notes>Removed rewrite, now only uses events, implemented unit tests, dropped support for &lt; 1.7</notes>
+    <notes>possibility to disable the extension from the admin panel, possibility to disable the extension for specific categories, possibility to disable  the extension for specific products</notes>
     <authors><author><name>Simon Sprankel</name><user>spranks</user><email>simonsprankel@gmail.com</email></author></authors>
-    <date>2014-12-06</date>
-    <time>13:04:38</time>
-    <contents><target name="magecommunity"><dir name="Spranks"><dir name="ConfigurableTierPrices"><dir name="Helper"><file name="Admin.php" hash="719aeec97e6a35b4bea91d82ad39aa42"/></dir><dir name="Model"><file name="Observer.php" hash="20ffa6c695961f316e70d8c2e311be51"/></dir><dir name="Test"><dir name="Config"><dir name="Main"><dir name="expectations"><file name="testModuleConfig.yaml" hash="a0728d3db36c6cd79759b78a804ae122"/></dir></dir><file name="Main.php" hash="487596affa2958576eb8f8cf8b4ade5f"/></dir><dir name="Model"><dir name="ObserverTest"><dir name="fixtures"><file name="createProducts.yaml" hash="52d581525f75a2ffc86b2a361eae8c0a"/></dir></dir><file name="ObserverTest.php" hash="268a3b1275dfe621af53c8883199839c"/></dir></dir><dir name="etc"><file name="config.xml" hash="ff110f81978feff76fb25517ee084464"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Spranks_ConfigurableTierPrices.xml" hash="8a3f62990ce094cb7e7e6313b66d5d51"/></dir></target></contents>
+    <date>2015-01-06</date>
+    <time>16:00:49</time>
+    <contents><target name="magecommunity"><dir name="Spranks"><dir name="ConfigurableTierPrices"><dir name="Helper"><file name="Data.php" hash="728524d770822272ae4ca69a77355c02"/></dir><dir name="Model"><file name="Observer.php" hash="bd0903a15b26d67a83d225b25ad9b927"/><dir name="System"><dir name="Config"><dir name="Source"><file name="Category.php" hash="c63b3b1177f2fb1aa08070b156fe9fff"/></dir></dir></dir></dir><dir name="Test"><dir name="Config"><dir name="Main"><dir name="expectations"><file name="testModuleConfig.yaml" hash="74b1f280637c647eb6fb328406a9d61a"/></dir></dir><file name="Main.php" hash="487596affa2958576eb8f8cf8b4ade5f"/></dir><dir name="Model"><dir name="ObserverTest"><dir name="fixtures"><file name="createProducts.yaml" hash="52d581525f75a2ffc86b2a361eae8c0a"/></dir></dir><file name="ObserverTest.php" hash="268a3b1275dfe621af53c8883199839c"/></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="f259c4c957a1679ffc132eecdcde9ef0"/><file name="config.xml" hash="f4d0c66218a52e1523b698b353c557d8"/><file name="system.xml" hash="956eb2b624f8d39b5fb6d9ce02077866"/></dir><dir name="sql"><dir name="spranks_configurabletierprices_setup"><file name="upgrade-2.0.0-2.1.0.php" hash="864b04c416e67615c3262185e1b7539c"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Spranks_ConfigurableTierPrices.xml" hash="8a3f62990ce094cb7e7e6313b66d5d51"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
