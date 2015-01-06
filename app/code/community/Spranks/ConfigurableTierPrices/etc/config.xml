@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Spranks_ConfigurableTierPrices>
-            <version>2.0.0</version>
+            <version>2.1.0</version>
         </Spranks_ConfigurableTierPrices>
     </modules>
     <global>
@@ -11,6 +11,14 @@
                 <class>Spranks_ConfigurableTierPrices_Model</class>
             </spranks_configurabletierprices>
         </models>
+        <resources>
+            <spranks_configurabletierprices_setup>
+                <setup>
+                    <module>Spranks_ConfigurableTierPrices</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+            </spranks_configurabletierprices_setup>
+        </resources>
         <helpers>
             <spranks_configurabletierprices>
                 <class>Spranks_ConfigurableTierPrices_Helper</class>

@@ -42,6 +42,12 @@ Installation Instructions
 Uninstallation
 --------------
 1. Remove all extension files from your Magento installation or uninstall the extension via Magento Connect.
+2. Run the following SQL query after removing the extension files:
+
+```sql
+DELETE FROM `eav_attribute` WHERE attribute_code = 'configtierprices_disabled';
+DELETE FROM `core_resource` WHERE code = 'spranks_configurabletierprices_setup';
+```
 
 Support
 -------

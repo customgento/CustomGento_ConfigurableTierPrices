@@ -14,7 +14,8 @@ class Spranks_ConfigurableTierPrices_Model_Observer
     {
         $product = $observer->getProduct();
         if (!Mage::helper('spranks_configurabletierprices')->isExtensionEnabled()
-            || Mage::helper('spranks_configurabletierprices')->isProductInDisabledCategory($product)) {
+            || Mage::helper('spranks_configurabletierprices')->isProductInDisabledCategory($product)
+            || Mage::helper('spranks_configurabletierprices')->isExtensionDisabledForProduct($product)) {
             return $this;
         }
         // do not calculate tier prices based on cart items on product page
