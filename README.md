@@ -63,4 +63,4 @@ Licence
 
 Copyright
 ---------
-(c) 2012-2014 Simon Sprankel
+(c) 2012-2015 Simon Sprankel
