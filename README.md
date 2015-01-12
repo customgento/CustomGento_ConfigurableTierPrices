@@ -45,6 +45,15 @@ Installation Instructions
 2. Install the extension via Magento Connect with the key shown above or copy all the files into your document root.
 3. Clear the cache.
 
+FAQ
+---
+1. I installed the extension, but it does not work - can you help me?  
+Please check the following:
+  * Do you use the latest version of the extension? If so, make sure you also use Magento >= 1.7.
+  * Do you use Magento < 1.7? Then make sure to use [version 1.0.1 of this extension](https://github.com/sprankhub/Spranks_ConfigurableTierPrices/releases/tag/v1.0.1).
+  * Do you really use configurable products? This extension only works with configurable products. It does not work if you use e.g. simple products with custom options.
+  * Make sure that the extension is not deactivated completely, for a specific category or for a specific product. You can check that under System - Configuration - Spranks Configurable Tier Prices - General Settings or in the product respecively.
+
 Uninstallation
 --------------
 1. Remove all extension files from your Magento installation or uninstall the extension via Magento Connect.
