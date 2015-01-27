@@ -53,6 +53,7 @@ Please check the following:
   * Do you use Magento < 1.7? Then make sure to use [version 1.0.1 of this extension](https://github.com/sprankhub/Spranks_ConfigurableTierPrices/releases/tag/v1.0.1).
   * Do you really use configurable products? This extension only works with configurable products. It does not work if you use e.g. simple products with custom options.
   * Make sure that the extension is not deactivated completely, for a specific category or for a specific product. You can check that under System - Configuration - Spranks Configurable Tier Prices - General Settings or in the product respecively.
+  * Make sure that your tier prices are lower than the normal prices. That is the way they are supposed to be used.
 
 Uninstallation
 --------------
