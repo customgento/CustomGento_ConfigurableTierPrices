@@ -13,9 +13,10 @@ class Spranks_ConfigurableTierPrices_Model_Observer
     public function catalogProductGetFinalPrice(Varien_Event_Observer $observer)
     {
         $product = $observer->getProduct();
-        if (!Mage::helper('spranks_configurabletierprices')->isExtensionEnabled()
+        if ( ! Mage::helper('spranks_configurabletierprices')->isExtensionEnabled()
             || Mage::helper('spranks_configurabletierprices')->isProductInDisabledCategory($product)
-            || Mage::helper('spranks_configurabletierprices')->isExtensionDisabledForProduct($product)) {
+            || Mage::helper('spranks_configurabletierprices')->isExtensionDisabledForProduct($product)
+        ) {
             return $this;
         }
         // do not calculate tier prices based on cart items on product page
@@ -78,10 +79,17 @@ class Spranks_ConfigurableTierPrices_Model_Observer
     private function _getAllVisibleItems()
     {
         if (Mage::helper('spranks_configurabletierprices')->isAdmin()) {
-            return Mage::getSingleton('adminhtml/session_quote')->getQuote()->getAllVisibleItems();
+            $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote();
+        } else if (Mage::app()->getRequest()->getRouteName() == 'checkout') {
+            // load the queue if we are in the checkout because otherwise the call to getQuote() will cause an
+            // infinite loop if the currency is switched - see https://github.com/sprankhub/Spranks_ConfigurableTierPrices/issues/24
+            $quoteId = Mage::getSingleton('checkout/session')->getQuoteId();
+            $quote   = Mage::getModel('sales/quote')->load($quoteId);
         } else {
-            return Mage::getSingleton('checkout/session')->getQuote()->getAllVisibleItems();
+            $quote = Mage::getSingleton('checkout/session')->getQuote();
         }
+
+        return $quote->getAllVisibleItems();
     }
 
 }
