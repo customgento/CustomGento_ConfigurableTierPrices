@@ -4,6 +4,12 @@
         <Spranks_ConfigurableTierPrices>
             <active>true</active>
             <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog/>
+                <Mage_Checkout/>
+                <Mage_Core/>
+                <Mage_Sales/>
+            </depends>
         </Spranks_ConfigurableTierPrices>
     </modules>
 </config>
