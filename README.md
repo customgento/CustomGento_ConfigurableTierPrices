@@ -29,6 +29,7 @@ Requirements
 ------------
 - PHP >= 5.2.0
 - Mage_Catalog
+- Mage_Checkout
 - Mage_Core
 - Mage_Sales
 
