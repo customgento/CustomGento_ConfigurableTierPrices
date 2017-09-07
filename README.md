@@ -1,6 +1,6 @@
 CustomGento_ConfigurableTierPrices Extension
 ========================================
-[![Build Status](https://travis-ci.org/customgento/CustomGento_ConfigurableTierPrices.svg?branch=master)](https://travis-ci.org//CustomGento_ConfigurableTierPrices)
+[![Build Status](https://travis-ci.org/customgento/CustomGento_ConfigurableTierPrices.svg?branch=master)](https://travis-ci.org/customgento/CustomGento_ConfigurableTierPrices)
 
 This extension changes the way Magento calculates tier prices of configurable products. You can now add different variants of a configurable product to the cart and you will get the tier price for the total quantity of all variants in the cart.
 
