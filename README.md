@@ -14,9 +14,8 @@ Facts
 -----
 - version: 2.1.0
 - extension key: CustomGento_ConfigurableTierPrices
-- [extension on Magento Connect](http://www.magentocommerce.com/magento-connect/customgento-configurabletierprices.html)
-- Magento Connect 1.0 extension key: magento-community/CustomGento_ConfigurableTierPrices
-- Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/CustomGento_ConfigurableTierPrices
+- [extension on Magento Connect](https://www.magentocommerce.com/magento-connect/spranks-configurabletierprices.html)
+- Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/Spranks_ConfigurableTierPrices
 - [extension on GitHub](https://github.com/customgento/CustomGento_ConfigurableTierPrices)
 - [direct download link](https://github.com/customgento/CustomGento_ConfigurableTierPrices/archive/master.zip)
 
