@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 5.3
   - 5.4
   - 5.5
   - 5.6
@@ -23,19 +22,6 @@ matrix:
     - php: 7.0
     - php: hhvm
   exclude:
-    # Newer Magento versions uses newer PHP versions
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.0.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.1.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.2.1"
-
-    - php: 5.3
-      env: MAGENTO_VERSION="magento-mirror-1.9.2.2"
-
     # Old Magento Versions are not officially supported to run with PHP 5.5
     - php: 5.5
       env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
