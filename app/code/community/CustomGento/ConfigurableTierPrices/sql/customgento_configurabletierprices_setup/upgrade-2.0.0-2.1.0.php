@@ -4,10 +4,10 @@
 $installer = $this;
 $installer->startSetup();
 
-$attributeCode = Spranks_ConfigurableTierPrices_Helper_Data::ATTRIBUTE_DISABLED_FOR_PRODUCT;
+$attributeCode = CustomGento_ConfigurableTierPrices_Helper_Data::ATTRIBUTE_DISABLED_FOR_PRODUCT;
 $installer->addAttribute(
     Mage_Catalog_Model_Product::ENTITY, $attributeCode, array(
-    'label'                   => 'Disable Spranks Configurable Tier Prices',
+    'label'                   => 'Disable CustomGento Configurable Tier Prices',
     'group'                   => 'General',
     'type'                    => 'int',
     'input'                   => 'select',

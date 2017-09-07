@@ -46,6 +46,6 @@ script:
 notifications:
   email:
     recipients:
-      - mail@simonsprankel.de
+      - simon@customgento.com
     on_success: always
     on_failure: always

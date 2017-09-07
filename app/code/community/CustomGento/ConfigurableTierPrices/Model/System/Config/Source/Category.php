@@ -2,7 +2,7 @@
 /**
  * Source model for all categories except the root category.
  */
-class Spranks_ConfigurableTierPrices_Model_System_Config_Source_Category
+class CustomGento_ConfigurableTierPrices_Model_System_Config_Source_Category
 {
 
     public function toOptionArray()
@@ -16,7 +16,7 @@ class Spranks_ConfigurableTierPrices_Model_System_Config_Source_Category
         $options = array();
 
         $options[] = array(
-            'label' => Mage::helper('spranks_configurabletierprices')->__('-- Disable for no Category --'),
+            'label' => Mage::helper('customgento_configurabletierprices')->__('-- Disable for no Category --'),
             'value' => ''
         );
 

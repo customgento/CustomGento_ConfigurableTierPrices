@@ -1,10 +1,10 @@
 <?php
 
-class Spranks_ConfigurableTierPrices_Helper_Data extends Mage_Core_Helper_Abstract
+class CustomGento_ConfigurableTierPrices_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
-    const XML_PATH_IS_ENABLED = 'spranks_configurabletierprices/general/is_enabled';
-    const XML_PATH_DISABLED_FOR_CATEGORY = 'spranks_configurabletierprices/general/disabled_for_category';
+    const XML_PATH_IS_ENABLED = 'sales/customgento_configurabletierprices/is_enabled';
+    const XML_PATH_DISABLED_FOR_CATEGORY = 'sales/customgento_configurabletierprices/disabled_for_category';
 
     // attribute code length must be less than 30 symbols!
     const ATTRIBUTE_DISABLED_FOR_PRODUCT = 'configtierprices_disabled';

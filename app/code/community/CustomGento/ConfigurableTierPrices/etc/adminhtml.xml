@@ -4,17 +4,17 @@
         <resources>
             <admin>
                 <children>
-                    <spranks_configurabletierprices translate="title">
+                    <customgento_configurabletierprices translate="title">
                         <title>Configurable Tier Prices</title>
                         <sort_order>510</sort_order>
-                    </spranks_configurabletierprices>
+                    </customgento_configurabletierprices>
                     <system>
                         <children>
                             <config>
                                 <children>
-                                    <spranks_configurabletierprices translate="title">
+                                    <customgento_configurabletierprices translate="title">
                                         <title>Configurable Tier Prices Settings</title>
-                                    </spranks_configurabletierprices>
+                                    </customgento_configurabletierprices>
                                 </children>
                             </config>
                         </children>

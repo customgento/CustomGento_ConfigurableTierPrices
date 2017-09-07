@@ -1,6 +1,6 @@
 <?php
 
-class Spranks_ConfigurableTierPrices_Model_Observer
+class CustomGento_ConfigurableTierPrices_Model_Observer
 {
 
     /**
@@ -8,19 +8,19 @@ class Spranks_ConfigurableTierPrices_Model_Observer
      *
      * @param Varien_Event_Observer $observer
      *
-     * @return Spranks_ConfigurableTierPrices_Model_Observer
+     * @return CustomGento_ConfigurableTierPrices_Model_Observer
      */
     public function catalogProductGetFinalPrice(Varien_Event_Observer $observer)
     {
         $product = $observer->getProduct();
-        if ( ! Mage::helper('spranks_configurabletierprices')->isExtensionEnabled()
-            || Mage::helper('spranks_configurabletierprices')->isProductInDisabledCategory($product)
-            || Mage::helper('spranks_configurabletierprices')->isExtensionDisabledForProduct($product)
+        if ( ! Mage::helper('customgento_configurabletierprices')->isExtensionEnabled()
+            || Mage::helper('customgento_configurabletierprices')->isProductInDisabledCategory($product)
+            || Mage::helper('customgento_configurabletierprices')->isExtensionDisabledForProduct($product)
         ) {
             return $this;
         }
         // do not calculate tier prices based on cart items on product page
-        // see https://github.com/sprankhub/Spranks_ConfigurableTierPrices/issues/14
+        // see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/14
         if (Mage::registry('current_product') || ! $product->isConfigurable()) {
             return $this;
         }
@@ -78,11 +78,11 @@ class Spranks_ConfigurableTierPrices_Model_Observer
      */
     private function _getAllVisibleItems()
     {
-        if (Mage::helper('spranks_configurabletierprices')->isAdmin()) {
+        if (Mage::helper('customgento_configurabletierprices')->isAdmin()) {
             $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote();
         } else if (Mage::app()->getRequest()->getRouteName() == 'checkout') {
             // load the queue if we are in the checkout because otherwise the call to getQuote() will cause an
-            // infinite loop if the currency is switched - see https://github.com/sprankhub/Spranks_ConfigurableTierPrices/issues/24
+            // infinite loop if the currency is switched - see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/24
             $quoteId = Mage::getSingleton('checkout/session')->getQuoteId();
             $quote   = Mage::getModel('sales/quote')->load($quoteId);
         } else {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <Spranks_ConfigurableTierPrices>
+        <CustomGento_ConfigurableTierPrices>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
@@ -10,6 +10,6 @@
                 <Mage_Core/>
                 <Mage_Sales/>
             </depends>
-        </Spranks_ConfigurableTierPrices>
+        </CustomGento_ConfigurableTierPrices>
     </modules>
 </config>

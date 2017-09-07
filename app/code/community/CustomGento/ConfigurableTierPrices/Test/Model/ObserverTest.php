@@ -1,6 +1,6 @@
 <?php
 
-class Spranks_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHPUnit_Test_Case
+class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev_PHPUnit_Test_Case
 {
 
     /**

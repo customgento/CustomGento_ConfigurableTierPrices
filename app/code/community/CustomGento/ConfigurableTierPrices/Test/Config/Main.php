@@ -1,6 +1,6 @@
 <?php
 
-class Spranks_ConfigurableTierPrices_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Config
+class Customgento_ConfigurableTierPrices_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Config
 {
 
     /**
@@ -19,7 +19,7 @@ class Spranks_ConfigurableTierPrices_Test_Config_Main extends EcomDev_PHPUnit_Te
     public function testHelperAliases()
     {
         $this->assertHelperAlias(
-            'spranks_configurabletierprices/admin', 'Spranks_ConfigurableTierPrices_Helper_Admin',
+            'customgento_configurabletierprices/admin', 'CustomGento_ConfigurableTierPrices_Helper_Admin',
             'correct helper alias'
         );
     }
@@ -30,7 +30,7 @@ class Spranks_ConfigurableTierPrices_Test_Config_Main extends EcomDev_PHPUnit_Te
     public function testModelAliases()
     {
         $this->assertModelAlias(
-            'spranks_configurabletierprices/observer', 'Spranks_ConfigurableTierPrices_Model_Observer',
+            'customgento_configurabletierprices/observer', 'CustomGento_ConfigurableTierPrices_Model_Observer',
             'correct model alias'
         );
     }
