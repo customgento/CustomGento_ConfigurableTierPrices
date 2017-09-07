@@ -86,4 +86,4 @@ Licence
 
 Copyright
 ---------
-(c) 2012-2015 Simon Sprankel
+(c) 2012-2017 CustomGento / Simon Sprankel
