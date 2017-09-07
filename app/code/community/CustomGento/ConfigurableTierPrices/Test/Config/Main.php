@@ -1,6 +1,6 @@
 <?php
 
-class Customgento_ConfigurableTierPrices_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Config
+class CustomGento_ConfigurableTierPrices_Test_Config_Main extends EcomDev_PHPUnit_Test_Case_Config
 {
 
     /**
