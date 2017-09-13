@@ -24,8 +24,13 @@ class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev
         $this->replaceByMock('singleton', 'checkout/session', $mockCheckoutSession);
 
         $this->app()->setCurrentStore('default');
-        // somehow needed to avoid exceptions of type "Cannot send session cookie - headers already sent by"
-        @session_start();
+
+        // needed to avoid exceptions of type "Cannot send session cookie - headers already sent by"
+        $coreSessionMock = $this
+            ->getMockBuilder('Mage_Catalog_Model_Session')
+            ->setMethods(array('start'))
+            ->getMock();
+        $this->replaceByMock('singleton', 'core/session', $coreSessionMock);
     }
 
     /**
@@ -33,8 +38,6 @@ class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev
      */
     protected function tearDown()
     {
-        // somehow needed to avoid exceptions of type "Failed to write session data"
-        @session_destroy();
         $this->setCurrentStore('admin');
     }
 
