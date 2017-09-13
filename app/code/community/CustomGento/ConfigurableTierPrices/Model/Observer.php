@@ -43,7 +43,7 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
      *
      * @return  float
      */
-    private function _calcConfigProductTierPricing($product)
+    protected function _calcConfigProductTierPricing($product)
     {
         $tierPrice = PHP_INT_MAX;
 
@@ -76,7 +76,7 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
      *
      * @return array with instances of Mage_Sales_Model_Quote_Item
      */
-    private function _getAllVisibleItems()
+    protected function _getAllVisibleItems()
     {
         if (Mage::helper('customgento_configurabletierprices')->isAdmin()) {
             $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote();
