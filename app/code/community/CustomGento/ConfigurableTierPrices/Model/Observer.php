@@ -13,17 +13,19 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
     public function catalogProductGetFinalPrice(Varien_Event_Observer $observer)
     {
         $product = $observer->getProduct();
-        if ( ! Mage::helper('customgento_configurabletierprices')->isExtensionEnabled()
+        if (!Mage::helper('customgento_configurabletierprices')->isExtensionEnabled()
             || Mage::helper('customgento_configurabletierprices')->isProductInDisabledCategory($product)
             || Mage::helper('customgento_configurabletierprices')->isExtensionDisabledForProduct($product)
         ) {
             return $this;
         }
+
         // do not calculate tier prices based on cart items on product page
         // see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/14
-        if (Mage::registry('current_product') || ! $product->isConfigurable()) {
+        if (Mage::registry('current_product') || !$product->isConfigurable()) {
             return $this;
         }
+
         // if tier prices are defined, also adapt them to configurable products
         if ($product->getTierPriceCount() > 0) {
             $tierPrice = $this->_calcConfigProductTierPricing($product);
@@ -56,11 +58,13 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
                 if ($item->getParentItem()) {
                     continue;
                 }
+
                 // this is the product ID of the parent!
                 $id = $item->getProductId();
                 // map the parent ID with the quantity of the simple product
                 $idQuantities[$id][] = $item->getQty();
             }
+
             // compute the total quantity of items of the configurable product
             if (array_key_exists($product->getId(), $idQuantities)) {
                 $totalQty  = array_sum($idQuantities[$product->getId()]);
@@ -82,7 +86,8 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
             $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote();
         } else if (Mage::app()->getRequest()->getRouteName() == 'checkout') {
             // load the queue if we are in the checkout because otherwise the call to getQuote() will cause an
-            // infinite loop if the currency is switched - see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/24
+            // infinite loop if the currency is switched
+            // see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/24
             $quoteId = Mage::getSingleton('checkout/session')->getQuoteId();
             $quote   = Mage::getModel('sales/quote')->load($quoteId);
         } else {

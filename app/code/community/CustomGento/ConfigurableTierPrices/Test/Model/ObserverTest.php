@@ -66,7 +66,7 @@ class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev
      * @test
      * @loadFixture createProducts
      * @doNotIndexAll
-     * @singleton checkout/cart
+     * @singleton   checkout/cart
      */
     public function testProduct1CartPricing()
     {
@@ -77,7 +77,7 @@ class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev
                 'super_attribute' => array(
                     92 => 3
                 ),
-                'qty' => 1
+                'qty'             => 1
             )
         );
         $cart->save();
@@ -89,24 +89,30 @@ class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev
      * @test
      * @loadFixture createProducts
      * @doNotIndexAll
-     * @singleton checkout/cart
+     * @singleton   checkout/cart
      */
     public function testProduct1CartTierPricing()
     {
         $cart = Mage::getSingleton('checkout/cart');
         $cart->init();
-        $cart->addProduct(1, array(
-            'super_attribute' => array(
-                92 => 3
-            ),
-            'qty' => 1
-        ));
-        $cart->addProduct(1, array(
-            'super_attribute' => array(
-                92 => 4
-            ),
-            'qty' => 1
-        ));
+        $cart->addProduct(
+            1,
+            array(
+                'super_attribute' => array(
+                    92 => 3
+                ),
+                'qty'             => 1
+            )
+        );
+        $cart->addProduct(
+            1,
+            array(
+                'super_attribute' => array(
+                    92 => 4
+                ),
+                'qty'             => 1
+            )
+        );
         $cart->save();
         $cart->getQuote()->collectTotals();
         $this->assertEquals(36, $cart->getQuote()->getGrandTotal(), 'test tier price in cart');

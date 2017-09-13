@@ -14,6 +14,7 @@ class CustomGento_ConfigurableTierPrices_Helper_Data extends Mage_Core_Helper_Ab
         if (Mage::app()->getStore()->isAdmin()) {
             return true;
         }
+
         if (Mage::getDesign()->getArea() == 'adminhtml') {
             return true;
         }
@@ -30,7 +31,7 @@ class CustomGento_ConfigurableTierPrices_Helper_Data extends Mage_Core_Helper_Ab
     {
         $disabledCategories = explode(',', Mage::getStoreConfig(self::XML_PATH_DISABLED_FOR_CATEGORY));
         $productCategories  = $product->getAvailableInCategories();
-        if (count(array_intersect($disabledCategories, $productCategories)) > 0) {
+        if (!empty(array_intersect($disabledCategories, $productCategories))) {
             return true;
         }
 
