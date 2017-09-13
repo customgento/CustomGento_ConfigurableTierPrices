@@ -121,24 +121,4 @@ class CustomGento_ConfigurableTierPrices_Test_Model_ObserverTest extends EcomDev
         $this->assertEquals(36, $cart->getQuote()->getGrandTotal(), 'test tier price in cart');
     }
 
-    /**
-     * @test
-     * @loadFixture createProducts
-     * @doNotIndexAll
-     */
-    public function testProduct1AdminPricing()
-    {
-        // TODO implement test
-    }
-
-    /**
-     * @test
-     * @loadFixture createProducts
-     * @doNotIndexAll
-     */
-    public function testProduct1AdminTierPricing()
-    {
-        // TODO implement test
-    }
-
 }
