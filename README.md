@@ -26,7 +26,7 @@ Example: There is a configurable product "football" and there are two correspond
 
 Requirements
 ------------
-- PHP >= 5.4.0
+- PHP >= 5.5.0
 - Mage_Catalog
 - Mage_Checkout
 - Mage_Core

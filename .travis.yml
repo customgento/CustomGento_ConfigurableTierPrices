@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 5.4
   - 5.5
   - 5.6
   - 7.0
@@ -9,7 +8,6 @@ php:
   - hhvm
 
 env:
-  - MAGENTO_VERSION="magento-mirror-1.7.0.2"
   - MAGENTO_VERSION="magento-mirror-1.8.1.0"
   - MAGENTO_VERSION="magento-mirror-1.9.0.1"
   - MAGENTO_VERSION="magento-mirror-1.9.1.1"
@@ -29,12 +27,7 @@ matrix:
     - php: 7.1
     - php: hhvm
   exclude:
-    # Old Magento Versions are not officially supported to run with PHP 5.5 / 5.6
-    - php: 5.5
-      env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
-    - php: 5.6
-      env: MAGENTO_VERSION="magento-mirror-1.7.0.2"
-    - php: 5.6
+    # Old Magento Versions are not officially supported to run with PHP 5.6
       env: MAGENTO_VERSION="magento-mirror-1.8.1.0"
     - php: 5.6
       env: MAGENTO_VERSION="magento-mirror-1.9.0.1"
