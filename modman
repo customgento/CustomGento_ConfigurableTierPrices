@@ -1,4 +1,6 @@
 app/code/community/CustomGento/ConfigurableTierPrices/ app/code/community/CustomGento/ConfigurableTierPrices/
 app/etc/modules/CustomGento_ConfigurableTierPrices.xml app/etc/modules/CustomGento_ConfigurableTierPrices.xml
 app/locale/de_DE/CustomGento_ConfigurableTierPrices.csv app/locale/de_DE/CustomGento_ConfigurableTierPrices.csv
+app/locale/de_AT/CustomGento_ConfigurableTierPrices.csv app/locale/de_AT/CustomGento_ConfigurableTierPrices.csv
+app/locale/de_CH/CustomGento_ConfigurableTierPrices.csv app/locale/de_CH/CustomGento_ConfigurableTierPrices.csv
 app/locale/en_US/CustomGento_ConfigurableTierPrices.csv app/locale/en_US/CustomGento_ConfigurableTierPrices.csv

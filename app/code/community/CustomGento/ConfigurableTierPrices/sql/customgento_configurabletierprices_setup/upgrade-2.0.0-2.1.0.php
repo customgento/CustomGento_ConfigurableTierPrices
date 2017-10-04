@@ -7,7 +7,7 @@ $installer->startSetup();
 $attributeCode = CustomGento_ConfigurableTierPrices_Helper_Data::ATTRIBUTE_DISABLED_FOR_PRODUCT;
 $installer->addAttribute(
     Mage_Catalog_Model_Product::ENTITY, $attributeCode, array(
-        'label'                   => 'Disable CustomGento Configurable Tier Prices',
+        'label'                   => 'Disable Tier Prices For Configurable Products',
         'group'                   => 'General',
         'type'                    => 'int',
         'input'                   => 'select',

@@ -5,7 +5,7 @@
             <admin>
                 <children>
                     <customgento_configurabletierprices translate="title">
-                        <title>Configurable Tier Prices</title>
+                        <title>Tier Prices For Configurable Products</title>
                         <sort_order>510</sort_order>
                     </customgento_configurabletierprices>
                     <system>
@@ -13,7 +13,7 @@
                             <config>
                                 <children>
                                     <customgento_configurabletierprices translate="title">
-                                        <title>Configurable Tier Prices Settings</title>
+                                        <title>Tier Prices For Configurable Products Settings</title>
                                     </customgento_configurabletierprices>
                                 </children>
                             </config>
