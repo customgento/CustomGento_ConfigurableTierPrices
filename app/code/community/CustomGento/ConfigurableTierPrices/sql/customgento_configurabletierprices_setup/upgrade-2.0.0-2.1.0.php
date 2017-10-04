@@ -20,7 +20,8 @@ $installer->addAttribute(
         'user_defined'            => false,
         'filterable_in_search'    => false,
         'is_configurable'         => false,
-        'used_in_product_listing' => true
+        'used_in_product_listing' => true,
+        'apply_to'                => 'configurable'
     )
 );
 
