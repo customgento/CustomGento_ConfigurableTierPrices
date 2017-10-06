@@ -29,9 +29,10 @@ class CustomGento_ConfigurableTierPrices_Helper_Data extends Mage_Core_Helper_Ab
 
     public function isProductInDisabledCategory(Mage_Catalog_Model_Product $product)
     {
-        $disabledCategories = explode(',', Mage::getStoreConfig(self::XML_PATH_DISABLED_FOR_CATEGORY));
-        $productCategories  = $product->getAvailableInCategories();
-        if (!empty(array_intersect($disabledCategories, $productCategories))) {
+        $disabledCategories    = explode(',', Mage::getStoreConfig(self::XML_PATH_DISABLED_FOR_CATEGORY));
+        $productCategories     = $product->getAvailableInCategories();
+        $intersectedCategories = array_intersect($disabledCategories, $productCategories);
+        if (!empty($intersectedCategories)) {
             return true;
         }
 
