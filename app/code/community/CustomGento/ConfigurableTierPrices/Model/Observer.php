@@ -23,9 +23,9 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
     {
         $product = $observer->getProduct();
 
-        if (!$this->_helper->isExtensionEnabled() ||
-            $this->_helper->isProductInDisabledCategory($product) ||
-            $this->_helper->isExtensionDisabledForProduct($product)
+        if (!$this->_helper->isExtensionEnabled()
+            || $this->_helper->isProductInDisabledCategory($product)
+            || $this->_helper->isExtensionDisabledForProduct($product)
         ) {
             return $this;
         }
@@ -81,12 +81,16 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
      */
     protected function _calculateTotalQuantity($product)
     {
-        return array_reduce($this->_getAllVisibleItems(), function ($total, $item) use ($product) {
-            if ($item->getProductId() == $product->getId()) {
-                $total += $item->getQty();
+        return array_reduce(
+            $this->_getAllVisibleItems(),
+            function ($total, $item) use ($product) {
+                if ($item->getProductId() == $product->getId()) {
+                    $total += $item->getQty();
+                }
+
+                return $total;
             }
-            return $total;
-        });
+        );
     }
 
     /**
