@@ -2,33 +2,48 @@
 
 class CustomGento_ConfigurableTierPrices_Model_Observer
 {
+    /**
+     * @var CustomGento_ConfigurableTierPrices_Helper_Data
+     */
+    protected $_helper;
+
+    public function __construct()
+    {
+        $this->_helper = Mage::helper('customgento_configurabletierprices');
+    }
 
     /**
      * Applies the tier pricing structure across different variants of configurable products.
      *
-     * @param Varien_Event_Observer $observer
+     * @param  Varien_Event_Observer $observer
      *
      * @return CustomGento_ConfigurableTierPrices_Model_Observer
      */
     public function catalogProductGetFinalPrice(Varien_Event_Observer $observer)
     {
         $product = $observer->getProduct();
-        if (!Mage::helper('customgento_configurabletierprices')->isExtensionEnabled()
-            || Mage::helper('customgento_configurabletierprices')->isProductInDisabledCategory($product)
-            || Mage::helper('customgento_configurabletierprices')->isExtensionDisabledForProduct($product)
+
+        if (!$this->_helper->isExtensionEnabled() ||
+            $this->_helper->isProductInDisabledCategory($product) ||
+            $this->_helper->isExtensionDisabledForProduct($product)
         ) {
             return $this;
         }
 
+        // only apply to configurable products
+        if (!$product->isConfigurable()) {
+            return $this;
+        }
+
         // do not calculate tier prices based on cart items on product page
-        // see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/14
-        if (Mage::registry('current_product') || !$product->isConfigurable()) {
+        // @see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/14
+        if (Mage::registry('current_product')) {
             return $this;
         }
 
         // if tier prices are defined, also adapt them to configurable products
         if ($product->getTierPriceCount() > 0) {
-            $tierPrice = $this->_calcConfigProductTierPricing($product);
+            $tierPrice = $this->_calculateTierPrice($product);
             if ($tierPrice < $product->getData('final_price')) {
                 $product->setData('final_price', $tierPrice);
             }
@@ -38,41 +53,40 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
     }
 
     /**
-     * Get product final price via configurable product's tier pricing structure.
-     * Uses qty of parent item to determine price.
+     * Calculate product final price via configurable product's tier pricing structure.
+     *
+     * Uses quantity of parent item to determine price.
      *
      * @param   Mage_Catalog_Model_Product $product
      *
      * @return  float
      */
-    protected function _calcConfigProductTierPricing($product)
+    protected function _calculateTierPrice($product)
     {
-        $tierPrice = PHP_INT_MAX;
+        $totalQuantity = $this->_calculateTotalQuantity($product);
 
-        if ($items = $this->_getAllVisibleItems()) {
-            // map mapping the IDs of the parent products with the quantities of the corresponding simple products
-            $idQuantities = array();
-            // go through all products in the quote
-            foreach ($items as $item) {
-                /** @var Mage_Sales_Model_Quote_Item $item */
-                if ($item->getParentItem()) {
-                    continue;
-                }
-
-                // this is the product ID of the parent!
-                $id = $item->getProductId();
-                // map the parent ID with the quantity of the simple product
-                $idQuantities[$id][] = $item->getQty();
-            }
-
-            // compute the total quantity of items of the configurable product
-            if (array_key_exists($product->getId(), $idQuantities)) {
-                $totalQty  = array_sum($idQuantities[$product->getId()]);
-                $tierPrice = $product->getPriceModel()->getBasePrice($product, $totalQty);
-            }
+        if ($totalQuantity > 0) {
+            return $product->getPriceModel()->getBasePrice($product, $totalQuantity);
         }
 
-        return $tierPrice;
+        return PHP_INT_MAX;
+    }
+
+    /**
+     * Calculate total quantity of product in cart.
+     *
+     * @param  Mage_Catalog_Model_Product $product
+     *
+     * @return int
+     */
+    protected function _calculateTotalQuantity($product)
+    {
+        return array_reduce($this->_getAllVisibleItems(), function ($total, $item) use ($product) {
+            if ($item->getProductId() == $product->getId()) {
+                $total += $item->getQty();
+            }
+            return $total;
+        });
     }
 
     /**
@@ -82,12 +96,12 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
      */
     protected function _getAllVisibleItems()
     {
-        if (Mage::helper('customgento_configurabletierprices')->isAdmin()) {
+        if ($this->_helper->isAdmin()) {
             $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote();
-        } else if (Mage::app()->getRequest()->getRouteName() == 'checkout') {
+        } elseif (Mage::app()->getRequest()->getRouteName() == 'checkout') {
             // load the queue if we are in the checkout because otherwise the call to getQuote() will cause an
             // infinite loop if the currency is switched
-            // see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/24
+            // @see https://github.com/customgento/CustomGento_ConfigurableTierPrices/issues/24
             $quoteId = Mage::getSingleton('checkout/session')->getQuoteId();
             $quote   = Mage::getModel('sales/quote')->load($quoteId);
         } else {
@@ -96,5 +110,4 @@ class CustomGento_ConfigurableTierPrices_Model_Observer
 
         return $quote->getAllVisibleItems();
     }
-
 }

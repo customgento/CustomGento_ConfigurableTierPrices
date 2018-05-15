@@ -4,7 +4,6 @@
  */
 class CustomGento_ConfigurableTierPrices_Model_System_Config_Source_Category
 {
-
     public function toOptionArray()
     {
         $collection = Mage::getResourceModel('catalog/category_collection');
@@ -33,5 +32,4 @@ class CustomGento_ConfigurableTierPrices_Model_System_Config_Source_Category
 
         return $options;
     }
-
 }
